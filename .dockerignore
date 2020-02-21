@@ -1,0 +1,5 @@
+.cicd/
+.idea/
+.settings/
+.project
+target/
