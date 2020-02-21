@@ -1,6 +1,5 @@
 -*.jar
 target/
 .idea
-bin/
 .project
 .history
