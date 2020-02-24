@@ -1,6 +1,7 @@
 import subprocess
 import psycopg2
 import requests
+import time
 
 def wait_for(url):
   print(f'waiting for {url}')
@@ -73,5 +74,8 @@ if __name__ == '__main__':
   print("Starting setup")
   setup_postgres()
   setup_connector()
+  print("Sleeping before adding events")
+  time.sleep(30)
+  print("Adding events")
   add_events()
   print("Done adding events")
