@@ -48,6 +48,9 @@ def setup_connector():
       "header.converter": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
       "schema.registry.url": regUrl,
       "snapshot.delay.ms": 2000,
+
+      "snapshot.select.statement.overrides": "mybug.events",
+      "snapshot.select.statement.overrides.mybug.events": "select * from mybug.events order by id",
   }
 
   res = requests.put(url='http://connector:8083/connectors/micro-connector/config', json=obj)
